@@ -1,0 +1,8 @@
+<!-- templates/macros.html -->
+{% macro render_message(role, content) %}
+    <div class="message {{ 'outgoing' if role == 'user' else 'incoming' }}">
+        <div class="alert alert-{{ 'primary' if role == 'user' else 'secondary' }}" role="alert">
+            <div class="message-content">{{content}}</div>
+        </div>
+    </div>
+{% endmacro %}

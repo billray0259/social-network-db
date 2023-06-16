@@ -18,7 +18,7 @@ class MessageDAO:
 
     def get_all(self, conversation_id):
         cursor = self.collection.find({"conversation_id": conversation_id})
-        return [Message(m['_id'], m['role'], m['content'], m['conversation_id']) for m in cursor]
+        return [Message(m['_id'], m['role'], m['content'], m['conversation_id'], m['timestamp']) for m in cursor]
 
     def delete_all(self, conversation_id):
         self.collection.delete_many({"conversation_id": conversation_id})
