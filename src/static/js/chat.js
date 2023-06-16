@@ -56,3 +56,7 @@ $(document).ready(function () {
         });
     });
 });
+
+$('#chat-button').on('click', function () {
+    $('#chat-window').toggleClass('hidden');
+});
